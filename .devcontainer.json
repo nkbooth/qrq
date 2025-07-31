@@ -1,0 +1,15 @@
+{
+  "image":"mcr.microsoft.com/devcontainers/cpp",
+  "name": "qrq Morse code trainer",
+  "features": {
+    "ghcr.io/duduribeiro/devcontainer-features/neovim:1"
+  },
+  "postCreateCommand": "curl -fsSL https://codeberg.org/alatartheblue/devcontainer-setup/raw/branch/main/installTools.sh | bash",
+  "runArgs": [
+    "--network", "host"
+  ],
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached"
+  ]
+}
